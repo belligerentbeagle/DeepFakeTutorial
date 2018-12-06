@@ -1,101 +1,28 @@
-# SimpleEmailSpoofer
+# DeepFake for Mac OSX
 This tutorial is only for Mac running OSX, with Python installed and pip or brew installed.
 
 ## Setup
 
 ### Downloading all necessary modules and files
 
+Clone or Download this Repository as zip.
+
+Then go to this link and download the `faceswap_env` folder. Put this folder into /faceswap
+
 Download the Mac CUDA Drivers: http://www.nvidia.com/object/mac-driver-archive.html
+
 Download Anaconda if you don’t already have it (check your python version: `$ python —version`:
 	If you have python 2:  https://repo.continuum.io/archive/Anaconda2-5.0.1-MacOSX-x86_64.pkg
 	If you have python 3: https://repo.continuum.io/archive/Anaconda3-5.0.1-MacOSX-x86_64.pkg
-Install 
 
+Download FakeApp (it’s for Windows but don’t worry): https://mega.nz/#!hTgA2b6b!mI6k9dFt_w__jIEUQO2ZePhzFMg6JWUpBZWiV2TDgs4 (You’ll probably need to create an account)
 
-### Allocating files in folders
-1. Put one video that you want to faceswap into the `clip` folder.
+Extract and copy the files `encoder.h5 decoder_A.h5 decoder_B.h5` and paste it in faceswap/model folder.
+Now delete FakeApp because it’s useless.
 
-2. Put all the photos of the person you want to faceswap with (let’s call him John), into `john` folder.
-
-### Install modules
-1. Open Terminal and `cd faceswap`
-
-2. Type `pip install virtualenv` (replace `pip` with `pip3` if you’re running python3.6) (If this fails, try installing requirements first)
-
-3. Now if you’re using CPU for this entire project: `pip install -r requirements.txt`
-    But if you’re using GPU for this entire project: `pip install -r requirements-gpu.txt`
-
-4. Next install ffmpeg: `pip install ffmpeg-python`
-
-5. Then `cd ..` and run `virtualenv faceswap_env/`
-
-6. Lastly, run `python faceswap.py -h`
-
-7. If anything’s missing e.g. NoModuleFound error, do `pip install _themodule’sname_`
-Some common ones might be:
-	cv2
-	dlib
-	cmake
-
-
-## Start FaceSwapping
-
-Next, `cd clip` and you should see the video you’ve put in when you `ls`
-
-In the `clip` directory, run `ffmpeg -i yourvideo.mp4 -vf fps=30 “scene%d.png”
-
-Now, let’s extract each scene with a face from the video that you’ve put in `clip` and output it into `clip_faces` by running: `python faceswap.py extract -i clip -o clip_faces`
-If terminal spits out an error about FAN or GPU not supported, run this command to switch an aligner: `python faceswap.py extract -i clip -o clip_faces -A dlib `
-
-Then, let’s extract john’s face from each of john’s picture to `john_faces`: `python faceswap.py extract -i john -o john_faces` Likewise, if terminal throws you an error about GPU or your FAN, add `-A dlib` behind the command.
-
-Now here’s the fun and long part!
-Train your neural network to recognise and swap john’s face with the face in the video: `python faceswap.py train -A clip_faces -B jessica_faces -m model -p`
-Likewise, add `-A dlib` if terminal spits out an error about FAN or GPU.
-
-Having done the above command, you should see a window that pops up after about 30 seconds, and you should see faces on the left and right. Left will be from the video and right will be of john. Give it a few hours and once the left stops looking like Nicholas Cage and more like John, press Enter on the window. This will invoke a quit signal and the model will be saved.
-
-Now let’s convert what the neural network has trained into a model: `python faceswap.py convert -i tom -o output -m model`
-
-Then, `cd output`
-
-Finally, this is where your gold will come, run your final command: `ffmpeg -i scene%d.png -c:v libx264 -vf “fps=30,format=yuv420p” faceswappedvideo.mp4` and see your video being produced in `model` or `output`.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# SimpleEmailSpoofer
-This tutorial is only for Mac running OSX, with Python installed and pip or brew installed.
-
-## Setup
-
-### Downloading all necessary modules and files
-
-Download the Mac CUDA Drivers: http://www.nvidia.com/object/mac-driver-archive.html
-Download Anaconda if you don’t already have it (check your python version: `$ python —version`:
-	If you have python 2:  https://repo.continuum.io/archive/Anaconda2-5.0.1-MacOSX-x86_64.pkg
-	If you have python 3: https://repo.continuum.io/archive/Anaconda3-5.0.1-MacOSX-x86_64.pkg
-Install 
+Download CUDNN: https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v6/prod/8.0_20170307/cudnn-8.0-osx-x64-v6.0-tgz You will have to create an account
+Extract the contents of the file you just downloaded and put the files into `/yourdisk/Developer/NVDIA/CUDA-8.0/includes` and `/yourdisk/Developer/NVDIA/CUDA-8.0/lib`
+Some users reported these folders didn’t exist even after downloading CUDA so if they don’t exist just create them.
 
 
 ### Allocating files in folders
