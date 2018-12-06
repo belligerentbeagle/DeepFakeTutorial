@@ -7,7 +7,7 @@ This tutorial is only for Mac running OSX, with Python installed and pip or brew
 
 Clone or Download this Repository as zip.
 
-Then go to this link and download the `faceswap_env` folder. Put this folder into /faceswap
+Then go to this link[https://github.com/MITeoRIte/Virtual_Env_for_deepfake] and download the `faceswap_env` folder. Put this folder into /faceswap
 
 Download the Mac CUDA Drivers: http://www.nvidia.com/object/mac-driver-archive.html
 
