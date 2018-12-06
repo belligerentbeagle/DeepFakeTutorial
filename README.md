@@ -5,7 +5,7 @@ This tutorial is only for Mac running OSX, with Python installed and pip or brew
 
 ### Downloading all necessary modules and files
 
-Clone or Download this Repository as zip.
+Clone or Download this Repository as zip, then create a new folder "faceswap" and put everything inside. 
 
 Then go to this [link](https://github.com/MITeoRIte/Virtual_Env_for_deepfake) and download the `faceswap_env` folder. Put this folder into /faceswap
 
