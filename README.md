@@ -12,15 +12,16 @@ Then go to this [link](https://github.com/MITeoRIte/Virtual_Env_for_deepfake) an
 Download the Mac CUDA Drivers: http://www.nvidia.com/object/mac-driver-archive.html
 
 Download Anaconda if you don’t already have it (check your python version: `$ python —version`:
-If you have python 2:  https://repo.continuum.io/archive/Anaconda2-5.0.1-MacOSX-x86_64.pkg
-If you have python 3: https://repo.continuum.io/archive/Anaconda3-5.0.1-MacOSX-x86_64.pkg
+- If you have python 2:  https://repo.continuum.io/archive/Anaconda2-5.0.1-MacOSX-x86_64.pkg
+- If you have python 3: https://repo.continuum.io/archive/Anaconda3-5.0.1-MacOSX-x86_64.pkg
 
 Download FakeApp (it’s for Windows but don’t worry): https://mega.nz/#!hTgA2b6b!mI6k9dFt_w__jIEUQO2ZePhzFMg6JWUpBZWiV2TDgs4 (You’ll probably need to create an account)
 
 Extract and copy the files `encoder.h5 decoder_A.h5 decoder_B.h5` and paste it in faceswap/model folder.
 Now delete FakeApp because it’s useless.
 
-Download CUDNN: https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v6/prod/8.0_20170307/cudnn-8.0-osx-x64-v6.0-tgz You will have to create an account
+Download CUDNN: https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v6/prod/8.0_20170307/cudnn-8.0-osx-x64-v6.0-tgz (You will have to create an account)
+
 Extract the contents of the file you just downloaded and put the files into `/yourdisk/Developer/NVDIA/CUDA-8.0/includes` and `/yourdisk/Developer/NVDIA/CUDA-8.0/lib`
 Some users reported these folders didn’t exist even after downloading CUDA so if they don’t exist just create them.
 
