@@ -1,4 +1,4 @@
-# DeepFake for Mac OSX
+# DeepFake Tutorial for Mac OSX
 This tutorial is only for Mac running OSX, with Python installed and pip or brew installed.
 
 ## Setup
