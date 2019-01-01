@@ -69,7 +69,7 @@ Likewise, add `-A dlib` if terminal spits out an error about FAN or GPU.
 
 Having done the above command, you should see a window that pops up after about 30 seconds, and you should see faces on the left and right. Left will be from the video and right will be of john. Give it a few hours and once the left stops looking like Nicholas Cage and more like John, press Enter on the window. This will invoke a quit signal and the model will be saved.
 
-Now let’s convert what the neural network has trained into a model: `python faceswap.py convert -i tom -o output -m model`
+Now let’s convert what the neural network has trained into a model: `python faceswap.py convert -i clip -o output -m model`
 
 Then, `cd output`
 
