@@ -12,7 +12,7 @@ Then go to this [link](https://github.com/MITeoRIte/Virtual_Env_for_deepfake) an
 Download the Mac CUDA Drivers: http://www.nvidia.com/object/mac-driver-archive.html
 
 Download Anaconda if you don’t already have it (check your python version: `$ python —version`:
-- If you have python 2:  https://repo.continuum.io/archive/Anaconda2-5.0.1-MacOSX-x86_64.pkg
+- If you have python 2 (and you should update):  https://repo.continuum.io/archive/Anaconda2-5.0.1-MacOSX-x86_64.pkg
 - If you have python 3: https://repo.continuum.io/archive/Anaconda3-5.0.1-MacOSX-x86_64.pkg
 
 Download FakeApp (it’s for Windows but don’t worry): https://mega.nz/#!hTgA2b6b!mI6k9dFt_w__jIEUQO2ZePhzFMg6JWUpBZWiV2TDgs4 (You’ll probably need to create an account)
