@@ -64,7 +64,7 @@ If terminal spits out an error about FAN or GPU not supported, run this command 
 Then, let’s extract john’s face from each of john’s picture to `john_faces`: `python faceswap.py extract -i john -o john_faces` Likewise, if terminal throws you an error about GPU or your FAN, add `-A dlib` behind the command.
 
 Now here’s the fun and long part!
-Train your neural network to recognise and swap john’s face with the face in the video: `python faceswap.py train -A clip_faces -B jessica_faces -m model -p`
+Train your neural network to recognise and swap john’s face with the face in the video: `python faceswap.py train -A clip_faces -B john_faces -m model -p`
 Likewise, add `-A dlib` if terminal spits out an error about FAN or GPU.
 
 Having done the above command, you should see a window that pops up after about 30 seconds, and you should see faces on the left and right. Left will be from the video and right will be of john. Give it a few hours and once the left stops looking like Nicholas Cage and more like John, press Enter on the window. This will invoke a quit signal and the model will be saved.
@@ -73,7 +73,7 @@ Now let’s convert what the neural network has trained into a model: `python fa
 
 Then, `cd output`
 
-Finally, this is where your gold will come, run your final command: `ffmpeg -i scene%d.png -c:v libx264 -vf “fps=30,format=yuv420p” faceswappedvideo.mp4` and see your video being produced in `model` or `output`.
+Finally, this is where your gold will come, run your final command: `ffmpeg -i scene%d.png -c:v libx264 -vf “fps=30,format=yuv420p” faceswappedvideo.mp4` and see your video being produced in `output`.
 
 
 
