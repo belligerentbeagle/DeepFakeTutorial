@@ -37,7 +37,7 @@ class YAMLSerializer(Serializer):
 
     @classmethod
     def unmarshal(cls, input_string):
-        return yaml.load(input_string)
+        return yaml.safe_load(input_string)
 
 
 class JSONSerializer(Serializer):
